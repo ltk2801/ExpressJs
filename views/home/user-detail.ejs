@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main class="detail">
+          
+           <div class="card" style="width: 20rem;">
+            <img src="<%= user.avatar %> " class="card-img-top" alt="<%= user.id %>">
+            <div class="card-body">
+              <h3 class="card-title text-success"><%= user.first_name %> <%= user.last_name %> </h3>
+              <p class="card-text"><%= user.email %></p>
+              <a href="/users" class="btn btn-primary">Home</a>
+            </div>
+          </div>
+        </main>
+        <%- include('../includes/end.ejs') %>

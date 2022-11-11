@@ -1,0 +1,33 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/user.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <% if (persons.length > 0) { %>
+                    <div class="grid">
+                        <% for (let user of persons) { %>
+                            <article class="card user-item">
+                                <header class="card__header">
+                                    <h1 class="user__title">
+                                        <%= user.first_name  %>  <%= user.last_name %> 
+                                    </h1>
+                                </header>
+                                <div class="card__image">
+                                    <img src="<%= user.avatar %>" alt="<%= user.id %>">
+                                </div>
+                                <div class="card__content">
+                                    <p class="user__description">
+                                        <%= user.email %>
+                                    </p>
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No users Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>
